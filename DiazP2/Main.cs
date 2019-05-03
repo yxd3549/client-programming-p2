@@ -19,6 +19,7 @@ namespace DiazP2
 
         About about;
         Degrees degrees;
+        Minors minors;
         public Main()
         {
             this.rest = new REST("http://ist.rit.edu/api");
@@ -40,7 +41,7 @@ namespace DiazP2
         {
             BuildAbout();
             BuildDegrees();
-
+            BuildMinors();
         }
 
         private void BuildAbout()
@@ -178,6 +179,75 @@ namespace DiazP2
             degreeList.Text = list;
 
             degreeInfo.Controls.Add(degreeTitle);
+        }
+
+        private void BuildMinors()
+        {
+            string jsonMinors = rest.getRESTDataJSON("/minors/");
+
+            minors = JToken.Parse(jsonMinors).ToObject<Minors>();
+
+            int y = 50;
+
+            Label minorsLabel = new Label();
+            minorsLabel.Text = "Minors";
+            minorsLabel.Location = new Point(20, 20);
+            minorsList.Controls.Add(minorsLabel);
+
+            foreach (UgMinor minor in minors.UgMinors)
+            {
+                MaterialRadioButton radio = new MaterialRadioButton();
+                radio.Text = minor.name;
+                radio.AutoSize = false;
+                radio.Size = new Size(110, 20);
+                radio.CheckedChanged += new System.EventHandler(minorChanged);
+                radio.Location = new Point(20, y);
+                y += 30;
+
+                minorsList.Controls.Add(radio);
+            }
+        }
+
+        private void minorChanged(object sender, EventArgs e)
+        {
+            MaterialRadioButton button = (MaterialRadioButton)sender;
+            string ugMinorName = button.Text;
+            UgMinor ugMinor = null;
+
+            foreach (UgMinor minor in minors.UgMinors)
+            {
+                if (minor.name == ugMinorName)
+                {
+                    ugMinor = minor;
+                    break;
+                }
+            }
+
+            minorName.Visible = true;
+            minorName.Font = new Font(degreeTitle.Font.FontFamily, 9, FontStyle.Bold);
+            minorName.Text = ugMinor.title;
+
+            minorDescription.Visible = true;
+            minorDescription.Text = ugMinor.description;
+
+            minorCourses.Visible = true;
+            minorCourses.Font = new Font(minorCourses.Font.FontFamily, 9, FontStyle.Bold);
+
+            int x = 0;
+
+            courses.Controls.Clear();
+
+            foreach(string course in ugMinor.courses)
+            {
+                LinkLabel courseLabel = new LinkLabel();
+                courseLabel.Text = course;
+                courseLabel.Location = new Point(x, 0);
+                courseLabel.Size = new Size(70, 30);
+                x += 70;
+
+                courses.Controls.Add(courseLabel);
+            }
+
         }
     }
 }
