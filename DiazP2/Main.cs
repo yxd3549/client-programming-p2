@@ -51,12 +51,12 @@ namespace DiazP2
             about = JToken.Parse(jsonAbout).ToObject<About>();
 
             aboutTitle.Text = about.title;
-            aboutTitle.Font = new Font("Arial", aboutTitle.Font.Size + 3, FontStyle.Bold);
+            aboutTitle.Font = new Font(aboutTitle.Font.FontFamily, 10, FontStyle.Bold);
 
             aboutDescription.Text = about.description;
 
             aboutQuote.Text = about.quote + "\n -" + about.quoteAuthor;
-            aboutQuote.Font = new Font("Arial", aboutQuote.Font.Size, FontStyle.Italic);
+            aboutQuote.Font = new Font(aboutQuote.Font.FontFamily, aboutQuote.Font.Size, FontStyle.Italic);
 
         }
 
@@ -68,8 +68,10 @@ namespace DiazP2
 
             int y = 50;
 
-            Label undergraduteLabel = new Label();
+            MaterialLabel undergraduteLabel = new MaterialLabel();
+            undergraduteLabel.Size = new Size(undergraduteLabel.Size.Width + 20, undergraduteLabel.Size.Height);          
             undergraduteLabel.Text = "Undergraduate";
+
             undergraduteLabel.Location = new Point(20, 20);
             degreesRadioButtons.Controls.Add(undergraduteLabel);
 
@@ -87,7 +89,7 @@ namespace DiazP2
                 degreesRadioButtons.Controls.Add(radio);
             }
 
-            Label graduateLabel = new Label();
+            MaterialLabel graduateLabel = new MaterialLabel();
             graduateLabel.Text = "Graduate";
             graduateLabel.Location = new Point(20, y);
             degreesRadioButtons.Controls.Add(graduateLabel);
@@ -135,11 +137,9 @@ namespace DiazP2
             }
 
             degreeTitle.Visible = true;
-            degreeTitle.Font = new Font(degreeTitle.Font.FontFamily, 9, FontStyle.Bold);
+            degreeTitle.Font = new Font(degreeTitle.Font.FontFamily, 10, FontStyle.Bold);
 
             degreeDescription.Visible = true;
-            degreeDescription.AutoSize = true;
-            degreeDescription.MaximumSize = new Size(280, 300);
 
             string list = "";
             if (undergraduateDegree != null) {
@@ -224,16 +224,16 @@ namespace DiazP2
             }
 
             minorName.Visible = true;
-            minorName.Font = new Font(degreeTitle.Font.FontFamily, 9, FontStyle.Bold);
+            minorName.Font = new Font(degreeTitle.Font.FontFamily, 10, FontStyle.Bold);
             minorName.Text = ugMinor.title;
 
             minorDescription.Visible = true;
             minorDescription.Text = ugMinor.description;
 
             minorCourses.Visible = true;
-            minorCourses.Font = new Font(minorCourses.Font.FontFamily, 9, FontStyle.Bold);
+            minorCourses.Font = new Font(minorCourses.Font.FontFamily, 10, FontStyle.Bold);
 
-            int x = 0;
+            int x = 10;
 
             courses.Controls.Clear();
 
@@ -243,10 +243,26 @@ namespace DiazP2
                 courseLabel.Text = course;
                 courseLabel.Location = new Point(x, 0);
                 courseLabel.Size = new Size(70, 30);
+                courseLabel.LinkClicked += new LinkLabelLinkClickedEventHandler(courseClicked);
                 x += 70;
 
                 courses.Controls.Add(courseLabel);
             }
+
+        }
+
+        private void courseClicked (object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel link = (LinkLabel)sender;
+            link.LinkVisited = true;
+            string courseName = link.Text;
+
+            string jsonCourse = rest.getRESTDataJSON("/course/courseID=" + courseName);
+            Course course = JToken.Parse(jsonCourse).ToObject<Course>();
+
+            CourseForm courseForm = new CourseForm(course.title + " (" + course.courseID + ")", course.description);
+
+            courseForm.Show();
 
         }
     }

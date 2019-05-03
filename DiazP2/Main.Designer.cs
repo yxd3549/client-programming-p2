@@ -140,13 +140,13 @@ namespace DiazP2
             // 
             // minorInfo
             // 
-            this.minorInfo.Controls.Add(this.courses);
             this.minorInfo.Controls.Add(this.minorCourses);
+            this.minorInfo.Controls.Add(this.courses);
             this.minorInfo.Controls.Add(this.minorDescription);
             this.minorInfo.Controls.Add(this.minorName);
-            this.minorInfo.Location = new System.Drawing.Point(297, 6);
+            this.minorInfo.Location = new System.Drawing.Point(300, 6);
             this.minorInfo.Name = "minorInfo";
-            this.minorInfo.Size = new System.Drawing.Size(1325, 658);
+            this.minorInfo.Size = new System.Drawing.Size(1322, 658);
             this.minorInfo.TabIndex = 5;
             this.minorInfo.TabStop = false;
             // 
@@ -171,7 +171,7 @@ namespace DiazP2
             this.minorDescription.Location = new System.Drawing.Point(30, 90);
             this.minorDescription.MouseState = MaterialSkin.MouseState.HOVER;
             this.minorDescription.Name = "minorDescription";
-            this.minorDescription.Size = new System.Drawing.Size(1289, 513);
+            this.minorDescription.Size = new System.Drawing.Size(1286, 513);
             this.minorDescription.TabIndex = 1;
             this.minorDescription.Text = "materialLabel1";
             this.minorDescription.Visible = false;
@@ -184,16 +184,16 @@ namespace DiazP2
             this.minorCourses.Location = new System.Drawing.Point(30, 603);
             this.minorCourses.MouseState = MaterialSkin.MouseState.HOVER;
             this.minorCourses.Name = "minorCourses";
-            this.minorCourses.Size = new System.Drawing.Size(132, 44);
+            this.minorCourses.Size = new System.Drawing.Size(162, 44);
             this.minorCourses.TabIndex = 2;
-            this.minorCourses.Text = "Courses: ";
+            this.minorCourses.Text = "Courses:";
             this.minorCourses.Visible = false;
             // 
             // minorsList
             // 
-            this.minorsList.Location = new System.Drawing.Point(18, 6);
+            this.minorsList.Location = new System.Drawing.Point(11, 6);
             this.minorsList.Name = "minorsList";
-            this.minorsList.Size = new System.Drawing.Size(273, 658);
+            this.minorsList.Size = new System.Drawing.Size(283, 658);
             this.minorsList.TabIndex = 6;
             this.minorsList.TabStop = false;
             // 
@@ -215,21 +215,21 @@ namespace DiazP2
             this.degreeInfo.Controls.Add(this.degreeList);
             this.degreeInfo.Controls.Add(this.degreeDescription);
             this.degreeInfo.Controls.Add(this.degreeTitle);
-            this.degreeInfo.Location = new System.Drawing.Point(844, 27);
+            this.degreeInfo.Location = new System.Drawing.Point(593, 27);
             this.degreeInfo.Name = "degreeInfo";
-            this.degreeInfo.Size = new System.Drawing.Size(720, 583);
+            this.degreeInfo.Size = new System.Drawing.Size(971, 583);
             this.degreeInfo.TabIndex = 3;
             this.degreeInfo.TabStop = false;
             // 
             // degreeTitle
             // 
             this.degreeTitle.Depth = 0;
-            this.degreeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.degreeTitle.Font = new System.Drawing.Font("Roboto", 11F);
             this.degreeTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.degreeTitle.Location = new System.Drawing.Point(30, 38);
             this.degreeTitle.MouseState = MaterialSkin.MouseState.HOVER;
             this.degreeTitle.Name = "degreeTitle";
-            this.degreeTitle.Size = new System.Drawing.Size(575, 55);
+            this.degreeTitle.Size = new System.Drawing.Size(909, 55);
             this.degreeTitle.TabIndex = 0;
             this.degreeTitle.Text = "materialLabel1";
             this.degreeTitle.Visible = false;
@@ -237,12 +237,12 @@ namespace DiazP2
             // degreeDescription
             // 
             this.degreeDescription.Depth = 0;
-            this.degreeDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.degreeDescription.Font = new System.Drawing.Font("Roboto", 11F);
             this.degreeDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.degreeDescription.Location = new System.Drawing.Point(30, 84);
             this.degreeDescription.MouseState = MaterialSkin.MouseState.HOVER;
             this.degreeDescription.Name = "degreeDescription";
-            this.degreeDescription.Size = new System.Drawing.Size(575, 220);
+            this.degreeDescription.Size = new System.Drawing.Size(909, 122);
             this.degreeDescription.TabIndex = 1;
             this.degreeDescription.Text = "materialLabel1";
             this.degreeDescription.Visible = false;
@@ -250,12 +250,12 @@ namespace DiazP2
             // degreeList
             // 
             this.degreeList.Depth = 0;
-            this.degreeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.degreeList.Font = new System.Drawing.Font("Roboto", 11F);
             this.degreeList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.degreeList.Location = new System.Drawing.Point(30, 302);
+            this.degreeList.Location = new System.Drawing.Point(30, 206);
             this.degreeList.MouseState = MaterialSkin.MouseState.HOVER;
             this.degreeList.Name = "degreeList";
-            this.degreeList.Size = new System.Drawing.Size(563, 263);
+            this.degreeList.Size = new System.Drawing.Size(909, 263);
             this.degreeList.TabIndex = 2;
             this.degreeList.Text = "materialLabel1";
             this.degreeList.Visible = false;
@@ -264,7 +264,7 @@ namespace DiazP2
             // 
             this.degreesRadioButtons.Location = new System.Drawing.Point(49, 27);
             this.degreesRadioButtons.Name = "degreesRadioButtons";
-            this.degreesRadioButtons.Size = new System.Drawing.Size(744, 583);
+            this.degreesRadioButtons.Size = new System.Drawing.Size(523, 583);
             this.degreesRadioButtons.TabIndex = 4;
             this.degreesRadioButtons.TabStop = false;
             // 
@@ -299,11 +299,11 @@ namespace DiazP2
             this.aboutDescription.Depth = 0;
             this.aboutDescription.Font = new System.Drawing.Font("Roboto", 11F);
             this.aboutDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.aboutDescription.Location = new System.Drawing.Point(30, 132);
+            this.aboutDescription.Location = new System.Drawing.Point(26, 85);
             this.aboutDescription.MaximumSize = new System.Drawing.Size(1500, 300);
             this.aboutDescription.MouseState = MaterialSkin.MouseState.HOVER;
             this.aboutDescription.Name = "aboutDescription";
-            this.aboutDescription.Size = new System.Drawing.Size(1500, 270);
+            this.aboutDescription.Size = new System.Drawing.Size(1500, 248);
             this.aboutDescription.TabIndex = 1;
             this.aboutDescription.Text = "materialLabel1";
             // 
@@ -312,7 +312,7 @@ namespace DiazP2
             this.aboutQuote.Depth = 0;
             this.aboutQuote.Font = new System.Drawing.Font("Roboto", 11F);
             this.aboutQuote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.aboutQuote.Location = new System.Drawing.Point(30, 425);
+            this.aboutQuote.Location = new System.Drawing.Point(26, 333);
             this.aboutQuote.MaximumSize = new System.Drawing.Size(1500, 300);
             this.aboutQuote.MouseState = MaterialSkin.MouseState.HOVER;
             this.aboutQuote.Name = "aboutQuote";
@@ -340,7 +340,7 @@ namespace DiazP2
             // 
             // courses
             // 
-            this.courses.Location = new System.Drawing.Point(182, 607);
+            this.courses.Location = new System.Drawing.Point(168, 607);
             this.courses.Name = "courses";
             this.courses.Size = new System.Drawing.Size(1113, 40);
             this.courses.TabIndex = 3;
