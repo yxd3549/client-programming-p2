@@ -29,6 +29,7 @@ namespace DiazP2
         Dictionary<string, ByInterestArea> interestAreaDictionary = new Dictionary<string, ByInterestArea>();
         Dictionary<string, ByFaculty> facultyResearchDictionary = new Dictionary<string, ByFaculty>();
         Resources resources;
+        News news;
 
         public Main()
         {
@@ -56,6 +57,7 @@ namespace DiazP2
             BuildPeople();
             BuildResearch();
             BuildResources();
+            BuildNews();
         }
 
         private void BuildAbout()
@@ -545,6 +547,31 @@ namespace DiazP2
         {
             CoopEnrollmentForm form = new CoopEnrollmentForm(resources);
             form.Show();
+        }
+
+        private void BuildNews()
+        {
+            string jsonNews = rest.getRESTDataJSON("/news/");
+
+            news = JToken.Parse(jsonNews).ToObject<News>();
+
+            foreach(Older older in news.older){
+                Label newTitle = new Label();
+                newTitle.Text = older.title + " " + older.date;
+                newTitle.Size = new Size(newTitle.Size.Width + 400, newTitle.Size.Height);
+                newTitle.Font = new Font(newTitle.Font.FontFamily, newTitle.Font.Size, FontStyle.Bold);
+                newsPanel.Controls.Add(newTitle);
+
+                Label newContent = new Label();
+
+                if (older.description != null)
+                {
+
+                    newContent.Text = older.description;
+                    newContent.Size = new Size(newTitle.Size.Width + 400, newTitle.Size.Height + older.description.Length / 15);
+                    newsPanel.Controls.Add(newContent);
+                }
+            }
         }
     }
 }

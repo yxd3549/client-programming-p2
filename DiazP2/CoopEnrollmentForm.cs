@@ -36,7 +36,6 @@ namespace DiazP2
                 section.Text = content.description;
                 section.Size = new Size(sectionTitle.Size.Width + 240, sectionTitle.Size.Height + content.description.Length/10);
                 flowLayoutPanel1.Controls.Add(section);
-
             }
         }
     }

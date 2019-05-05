@@ -64,7 +64,7 @@ namespace DiazP2
             this.PeopleTab = new System.Windows.Forms.TabPage();
             this.researchTab = new System.Windows.Forms.TabPage();
             this.resourcesTab = new System.Windows.Forms.TabPage();
-            this.minorsTa = new System.Windows.Forms.TabPage();
+            this.newsTab = new System.Windows.Forms.TabPage();
             this.peoplePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.personData = new System.Windows.Forms.GroupBox();
             this.personPicture = new System.Windows.Forms.PictureBox();
@@ -94,6 +94,8 @@ namespace DiazP2
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.formsFlowPlane = new System.Windows.Forms.FlowLayoutPanel();
+            this.newsTitle = new System.Windows.Forms.Label();
+            this.newsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.Tabs.SuspendLayout();
             this.AboutTab.SuspendLayout();
             this.DegreesTab.SuspendLayout();
@@ -106,6 +108,7 @@ namespace DiazP2
             this.PeopleTab.SuspendLayout();
             this.researchTab.SuspendLayout();
             this.resourcesTab.SuspendLayout();
+            this.newsTab.SuspendLayout();
             this.personData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personPicture)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -134,7 +137,7 @@ namespace DiazP2
             this.Tabs.Controls.Add(this.PeopleTab);
             this.Tabs.Controls.Add(this.researchTab);
             this.Tabs.Controls.Add(this.resourcesTab);
-            this.Tabs.Controls.Add(this.minorsTa);
+            this.Tabs.Controls.Add(this.newsTab);
             this.Tabs.Depth = 0;
             this.Tabs.Location = new System.Drawing.Point(18, 206);
             this.Tabs.MouseState = MaterialSkin.MouseState.HOVER;
@@ -488,15 +491,17 @@ namespace DiazP2
             this.resourcesTab.Text = "Resources";
             this.resourcesTab.UseVisualStyleBackColor = true;
             // 
-            // minorsTa
+            // newsTab
             // 
-            this.minorsTa.Location = new System.Drawing.Point(8, 39);
-            this.minorsTa.Name = "minorsTa";
-            this.minorsTa.Padding = new System.Windows.Forms.Padding(3);
-            this.minorsTa.Size = new System.Drawing.Size(1628, 656);
-            this.minorsTa.TabIndex = 3;
-            this.minorsTa.Text = "Minors";
-            this.minorsTa.UseVisualStyleBackColor = true;
+            this.newsTab.Controls.Add(this.newsPanel);
+            this.newsTab.Controls.Add(this.newsTitle);
+            this.newsTab.Location = new System.Drawing.Point(8, 39);
+            this.newsTab.Name = "newsTab";
+            this.newsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.newsTab.Size = new System.Drawing.Size(1628, 656);
+            this.newsTab.TabIndex = 3;
+            this.newsTab.Text = "News";
+            this.newsTab.UseVisualStyleBackColor = true;
             // 
             // peoplePanel
             // 
@@ -760,6 +765,24 @@ namespace DiazP2
             this.formsFlowPlane.Size = new System.Drawing.Size(418, 422);
             this.formsFlowPlane.TabIndex = 8;
             // 
+            // newsTitle
+            // 
+            this.newsTitle.AutoSize = true;
+            this.newsTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newsTitle.Location = new System.Drawing.Point(24, 17);
+            this.newsTitle.Name = "newsTitle";
+            this.newsTitle.Size = new System.Drawing.Size(87, 31);
+            this.newsTitle.TabIndex = 0;
+            this.newsTitle.Text = "News";
+            // 
+            // newsPanel
+            // 
+            this.newsPanel.AutoScroll = true;
+            this.newsPanel.Location = new System.Drawing.Point(30, 82);
+            this.newsPanel.Name = "newsPanel";
+            this.newsPanel.Size = new System.Drawing.Size(1566, 542);
+            this.newsPanel.TabIndex = 1;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -788,6 +811,8 @@ namespace DiazP2
             this.researchTab.ResumeLayout(false);
             this.researchTab.PerformLayout();
             this.resourcesTab.ResumeLayout(false);
+            this.newsTab.ResumeLayout(false);
+            this.newsTab.PerformLayout();
             this.personData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.personPicture)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -821,7 +846,7 @@ namespace DiazP2
         private System.Windows.Forms.TabPage PeopleTab;
         private System.Windows.Forms.TabPage researchTab;
         private System.Windows.Forms.TabPage resourcesTab;
-        private System.Windows.Forms.TabPage minorsTa;
+        private System.Windows.Forms.TabPage newsTab;
         private System.Windows.Forms.Panel courses;
         private System.Windows.Forms.GroupBox statisticsBox;
         private System.Windows.Forms.GroupBox employmentBox;
@@ -862,6 +887,8 @@ namespace DiazP2
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.FlowLayoutPanel formsFlowPlane;
+        private System.Windows.Forms.FlowLayoutPanel newsPanel;
+        private System.Windows.Forms.Label newsTitle;
     }
 }
 
