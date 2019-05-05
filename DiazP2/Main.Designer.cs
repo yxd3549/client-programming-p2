@@ -63,7 +63,7 @@ namespace DiazP2
             this.employmentTitle = new System.Windows.Forms.Label();
             this.PeopleTab = new System.Windows.Forms.TabPage();
             this.researchTab = new System.Windows.Forms.TabPage();
-            this.ContactTab = new System.Windows.Forms.TabPage();
+            this.resourcesTab = new System.Windows.Forms.TabPage();
             this.minorsTa = new System.Windows.Forms.TabPage();
             this.peoplePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.personData = new System.Windows.Forms.GroupBox();
@@ -83,6 +83,17 @@ namespace DiazP2
             this.byFacultyPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.byAreaLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.resourcesTitle = new System.Windows.Forms.Label();
+            this.studyAbroadLink = new System.Windows.Forms.LinkLabel();
+            this.subtitleResources = new System.Windows.Forms.Label();
+            this.studentServicesLink = new System.Windows.Forms.LinkLabel();
+            this.labsLink = new System.Windows.Forms.LinkLabel();
+            this.ambassadorsLink = new System.Windows.Forms.LinkLabel();
+            this.coopEnrollmentLink = new System.Windows.Forms.LinkLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.formsFlowPlane = new System.Windows.Forms.FlowLayoutPanel();
             this.Tabs.SuspendLayout();
             this.AboutTab.SuspendLayout();
             this.DegreesTab.SuspendLayout();
@@ -94,8 +105,11 @@ namespace DiazP2
             this.employmentBox.SuspendLayout();
             this.PeopleTab.SuspendLayout();
             this.researchTab.SuspendLayout();
+            this.resourcesTab.SuspendLayout();
             this.personData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personPicture)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabsSelector
@@ -119,7 +133,7 @@ namespace DiazP2
             this.Tabs.Controls.Add(this.employmentTab);
             this.Tabs.Controls.Add(this.PeopleTab);
             this.Tabs.Controls.Add(this.researchTab);
-            this.Tabs.Controls.Add(this.ContactTab);
+            this.Tabs.Controls.Add(this.resourcesTab);
             this.Tabs.Controls.Add(this.minorsTa);
             this.Tabs.Depth = 0;
             this.Tabs.Location = new System.Drawing.Point(18, 206);
@@ -196,9 +210,9 @@ namespace DiazP2
             // 
             // degreesRadioButtons
             // 
-            this.degreesRadioButtons.Location = new System.Drawing.Point(49, 27);
+            this.degreesRadioButtons.Location = new System.Drawing.Point(30, 27);
             this.degreesRadioButtons.Name = "degreesRadioButtons";
-            this.degreesRadioButtons.Size = new System.Drawing.Size(523, 583);
+            this.degreesRadioButtons.Size = new System.Drawing.Size(542, 594);
             this.degreesRadioButtons.TabIndex = 4;
             this.degreesRadioButtons.TabStop = false;
             // 
@@ -209,7 +223,7 @@ namespace DiazP2
             this.degreeInfo.Controls.Add(this.degreeTitle);
             this.degreeInfo.Location = new System.Drawing.Point(593, 27);
             this.degreeInfo.Name = "degreeInfo";
-            this.degreeInfo.Size = new System.Drawing.Size(971, 583);
+            this.degreeInfo.Size = new System.Drawing.Size(1014, 584);
             this.degreeInfo.TabIndex = 3;
             this.degreeInfo.TabStop = false;
             // 
@@ -462,15 +476,17 @@ namespace DiazP2
             this.researchTab.Text = "Research";
             this.researchTab.UseVisualStyleBackColor = true;
             // 
-            // ContactTab
+            // resourcesTab
             // 
-            this.ContactTab.Location = new System.Drawing.Point(8, 39);
-            this.ContactTab.Name = "ContactTab";
-            this.ContactTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ContactTab.Size = new System.Drawing.Size(1628, 656);
-            this.ContactTab.TabIndex = 6;
-            this.ContactTab.Text = "Contact ";
-            this.ContactTab.UseVisualStyleBackColor = true;
+            this.resourcesTab.Controls.Add(this.groupBox2);
+            this.resourcesTab.Controls.Add(this.groupBox1);
+            this.resourcesTab.Location = new System.Drawing.Point(8, 39);
+            this.resourcesTab.Name = "resourcesTab";
+            this.resourcesTab.Padding = new System.Windows.Forms.Padding(3);
+            this.resourcesTab.Size = new System.Drawing.Size(1628, 656);
+            this.resourcesTab.TabIndex = 6;
+            this.resourcesTab.Text = "Resources";
+            this.resourcesTab.UseVisualStyleBackColor = true;
             // 
             // minorsTa
             // 
@@ -634,6 +650,116 @@ namespace DiazP2
             this.label1.TabIndex = 5;
             this.label1.Text = "By Faculty";
             // 
+            // resourcesTitle
+            // 
+            this.resourcesTitle.AutoSize = true;
+            this.resourcesTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resourcesTitle.Location = new System.Drawing.Point(21, 46);
+            this.resourcesTitle.Name = "resourcesTitle";
+            this.resourcesTitle.Size = new System.Drawing.Size(154, 31);
+            this.resourcesTitle.TabIndex = 0;
+            this.resourcesTitle.Text = "Resources";
+            // 
+            // studyAbroadLink
+            // 
+            this.studyAbroadLink.AutoSize = true;
+            this.studyAbroadLink.Location = new System.Drawing.Point(22, 206);
+            this.studyAbroadLink.Name = "studyAbroadLink";
+            this.studyAbroadLink.Size = new System.Drawing.Size(142, 25);
+            this.studyAbroadLink.TabIndex = 1;
+            this.studyAbroadLink.TabStop = true;
+            this.studyAbroadLink.Text = "Study Abroad";
+            // 
+            // subtitleResources
+            // 
+            this.subtitleResources.Location = new System.Drawing.Point(22, 111);
+            this.subtitleResources.Name = "subtitleResources";
+            this.subtitleResources.Size = new System.Drawing.Size(333, 80);
+            this.subtitleResources.TabIndex = 2;
+            this.subtitleResources.Text = "label3";
+            // 
+            // studentServicesLink
+            // 
+            this.studentServicesLink.AutoSize = true;
+            this.studentServicesLink.Location = new System.Drawing.Point(22, 262);
+            this.studentServicesLink.Name = "studentServicesLink";
+            this.studentServicesLink.Size = new System.Drawing.Size(175, 25);
+            this.studentServicesLink.TabIndex = 3;
+            this.studentServicesLink.TabStop = true;
+            this.studentServicesLink.Text = "Student Services";
+            // 
+            // labsLink
+            // 
+            this.labsLink.AutoSize = true;
+            this.labsLink.Location = new System.Drawing.Point(22, 321);
+            this.labsLink.Name = "labsLink";
+            this.labsLink.Size = new System.Drawing.Size(168, 25);
+            this.labsLink.TabIndex = 4;
+            this.labsLink.TabStop = true;
+            this.labsLink.Text = "Tutors and Labs";
+            // 
+            // ambassadorsLink
+            // 
+            this.ambassadorsLink.AutoSize = true;
+            this.ambassadorsLink.Location = new System.Drawing.Point(22, 376);
+            this.ambassadorsLink.Name = "ambassadorsLink";
+            this.ambassadorsLink.Size = new System.Drawing.Size(223, 25);
+            this.ambassadorsLink.TabIndex = 5;
+            this.ambassadorsLink.TabStop = true;
+            this.ambassadorsLink.Text = "Student Ambassadors";
+            // 
+            // coopEnrollmentLink
+            // 
+            this.coopEnrollmentLink.AutoSize = true;
+            this.coopEnrollmentLink.Location = new System.Drawing.Point(22, 434);
+            this.coopEnrollmentLink.Name = "coopEnrollmentLink";
+            this.coopEnrollmentLink.Size = new System.Drawing.Size(171, 25);
+            this.coopEnrollmentLink.TabIndex = 6;
+            this.coopEnrollmentLink.TabStop = true;
+            this.coopEnrollmentLink.Text = "Coop Enrollment";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.resourcesTitle);
+            this.groupBox1.Controls.Add(this.coopEnrollmentLink);
+            this.groupBox1.Controls.Add(this.studyAbroadLink);
+            this.groupBox1.Controls.Add(this.ambassadorsLink);
+            this.groupBox1.Controls.Add(this.subtitleResources);
+            this.groupBox1.Controls.Add(this.labsLink);
+            this.groupBox1.Controls.Add(this.studentServicesLink);
+            this.groupBox1.Location = new System.Drawing.Point(53, 18);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(375, 561);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.formsFlowPlane);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Location = new System.Drawing.Point(457, 18);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(482, 561);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(25, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 31);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Forms";
+            // 
+            // formsFlowPlane
+            // 
+            this.formsFlowPlane.Location = new System.Drawing.Point(20, 111);
+            this.formsFlowPlane.Name = "formsFlowPlane";
+            this.formsFlowPlane.Size = new System.Drawing.Size(418, 422);
+            this.formsFlowPlane.TabIndex = 8;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -661,8 +787,13 @@ namespace DiazP2
             this.PeopleTab.PerformLayout();
             this.researchTab.ResumeLayout(false);
             this.researchTab.PerformLayout();
+            this.resourcesTab.ResumeLayout(false);
             this.personData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.personPicture)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -689,7 +820,7 @@ namespace DiazP2
         private System.Windows.Forms.TabPage employmentTab;
         private System.Windows.Forms.TabPage PeopleTab;
         private System.Windows.Forms.TabPage researchTab;
-        private System.Windows.Forms.TabPage ContactTab;
+        private System.Windows.Forms.TabPage resourcesTab;
         private System.Windows.Forms.TabPage minorsTa;
         private System.Windows.Forms.Panel courses;
         private System.Windows.Forms.GroupBox statisticsBox;
@@ -720,6 +851,17 @@ namespace DiazP2
         private System.Windows.Forms.FlowLayoutPanel byFacultyPanel;
         private System.Windows.Forms.FlowLayoutPanel byInterestPanel;
         private System.Windows.Forms.Label researchTitle;
+        private System.Windows.Forms.LinkLabel coopEnrollmentLink;
+        private System.Windows.Forms.LinkLabel ambassadorsLink;
+        private System.Windows.Forms.LinkLabel labsLink;
+        private System.Windows.Forms.LinkLabel studentServicesLink;
+        private System.Windows.Forms.Label subtitleResources;
+        private System.Windows.Forms.LinkLabel studyAbroadLink;
+        private System.Windows.Forms.Label resourcesTitle;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.FlowLayoutPanel formsFlowPlane;
     }
 }
 

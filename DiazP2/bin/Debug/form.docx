@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/page.css">
+		<title> IST Instructional Web Environment</title>
+</head>
+<body>
+<div class="header">
+<img class="center" img src="media/IST.png" alt="IST Logo" style="width:225px;height:224px;" >
+<h1>IST Instructional Web Environment </h1>
+</div>
+
+<div class="roundedborder">
+<h2> Help! Frequently Asked Questions</h2>
+<h3> Everything you need to use the Web Environment for your courses can be located on this page.  If you still need additional support, please feel free to contact us at the email link below.</h3>
+<table>
+<tr>
+<td class="textbold textcenter tableheader" colspan="2"> Account Information</td>
+</tr>
+<tr>
+<td class="textemphasis"> How do I access IST-Serenity?</td>
+<td> Please go to <a href="/pages/how2login.html" title="Access IST-Serenity">How to connect to IST-Serenity</a>
+</td>
+</tr>
+<tr> 
+<td class="textemphasis"> How do I change my password?</td>
+<td> <a href="/pages/pw.html" title="Password Change"> Password Change</a> </td>
+</tr>
+<tr> 
+<td class="textemphasis"> Do I have a disk quota (how much storage do I get?)</td>
+<td>IST-Serenity's  <a href="/pages/quotas.html" title="Disk Quotas"> Disk Quotas</a> </td>
+</tr>
+<tr>
+<td class="textemphasis"> How do I access my MySQL database? </td>
+<td> Your IST-Serenity account includes a MySQL database. <a href="/pages/mysql-connect.html" title="MySQL Access"> Here is how you access that database.</a> </td>
+</tr>
+<tr>
+<td class="textemphasis"> Why do I get that "Forbidden" message when I go to my web site? </td>
+<td> The dreaded <a href="/pages/forbidden.html" title="Forbidden Message">"Forbidden" message </a> </td>
+</tr>
+<tr>
+<td class="textemphasis"> What happens to accounts at the end of the semester? </td>
+<td> Information on account termination - <a href="/pages/end-of-semester.html" title="End of Semester">End-of-Semester actions </a> </td>
+</tr>
+<tr>
+<td class="textbold textcenter tableheader" colspan="2"> Finding Pages</td>
+</tr>
+<tr>
+<td class="textemphasis">How Do I Access the Faculty/Student Pages?</td>
+<td>Please go to: http://ist-serenity.main.ad.rit.edu/~username  where ~username is the login name of the user of interest.</td>
+</tr>
+<tr>
+
+<td class="textemphasis">What if I don't know the login name or it is a team page?</td> 
+<td><a href="/pages/people.html" title="Individual and Team Sites"> Individual and Team Sites </a></td> 
+</tr>
+<tr>
+<td class="textbold textcenter tableheader" colspan="2"> Other Useful Information</td>
+</tr>
+<tr>
+<td class="textemphasis"> How can I see the server's (IST-Serenity's) usage statistics?</td>
+<td> <a href="/stats" title="Usage Statistics" target="_blank"> Usage Statistics </a> </td>
+</tr>
+</table>
+</div>	
+<footer class="footer">
+	<ul class="navigate">
+	<li class="navigate"> <a class="navigate" href="http://kelvin.ist.rit.edu" title="IST-Serenity Home"><img class="navigate" src="media/home.png" alt="Home"> </a> </li>
+	<li class="navigate"> <a class="navigate" href="http://www.rit.edu" title="RIT"><img class="navigate" src="media/rit.jpg" alt="RIT"> </a> </li>
+	<li class="navigate"> <a class="navigate" href="https://twitter.com/ISTatRIT" title="IST Twitter"><img class="navigate" src="media/twitter-wrap.png" alt="Twitter" ></a> </li>
+	<li class="navigate"> <a class="navigate" href="https://www.facebook.com/ISTatRIT" title="IST Facebook"><img class="navigate" src="media/facebook-wrap.png" alt="Facebook" ></a> </li>
+	<li class="navigate"> <a class="navigate" href="https://instagram.com/istatrit" title="IST Instagram"><img class="navigate" src="media/instagram-wrap.png" alt="Instagram"></a> </li>
+	<li class="navigate"> <a class="navigate" href="mailto:jssics@rit.edu?cc=jdmics@rit.edu" title="Email Support"><img class="navigate" src="media/email-wrap.png" alt="Email Support"></a> </li>	
+	</ul>
+<p> &copy 2015 IST Instructional Web Environment</p>
+</footer>	
+</body>
+</html>

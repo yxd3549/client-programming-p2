@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,6 +28,7 @@ namespace DiazP2
         Research research;
         Dictionary<string, ByInterestArea> interestAreaDictionary = new Dictionary<string, ByInterestArea>();
         Dictionary<string, ByFaculty> facultyResearchDictionary = new Dictionary<string, ByFaculty>();
+        Resources resources;
 
         public Main()
         {
@@ -53,6 +55,7 @@ namespace DiazP2
             BuildEmployment();
             BuildPeople();
             BuildResearch();
+            BuildResources();
         }
 
         private void BuildAbout()
@@ -466,6 +469,47 @@ namespace DiazP2
 
             ResearchForm form = new ResearchForm(faculty + "'s research", facultyResearchDictionary[faculty].citations);
             form.Show();
+        }
+
+        private void BuildResources()
+        {
+            string jsonResources = rest.getRESTDataJSON("/resources/");
+
+            resources = JToken.Parse(jsonResources).ToObject<Resources>();
+
+            resourcesTitle.Text = resources.title;
+            subtitleResources.Text = resources.subTitle;
+
+            foreach(GraduateForm form in resources.forms.graduateForms)
+            {
+                LinkLabel link = new LinkLabel();
+                link.Text = form.formName;
+                link.Name = form.href;
+                link.Size = new Size(link.Size.Width + 60, link.Size.Height);
+                link.LinkClicked += new LinkLabelLinkClickedEventHandler(formLinkClicked);
+                formsFlowPlane.Controls.Add(link);
+            }
+
+            foreach (UndergraduateForm form in resources.forms.undergraduateForms)
+            {
+                LinkLabel link = new LinkLabel();
+                link.Text = form.formName;
+                link.Name = form.href;
+                link.Size = new Size(link.Size.Width + 60, link.Size.Height);
+                link.LinkClicked += new LinkLabelLinkClickedEventHandler(formLinkClicked);
+                formsFlowPlane.Controls.Add(link);
+            }
+        }
+
+        private void formLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel link = (LinkLabel)sender;
+            link.LinkVisited = true;
+            string formHref = link.Name;
+
+            Console.WriteLine(formHref);
+            System.Diagnostics.Process.Start("http://ist.rit.edu/" + formHref);
+
         }
     }
 }

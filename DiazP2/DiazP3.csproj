@@ -87,6 +87,7 @@
     <Compile Include="ResearchForm.Designer.cs">
       <DependentUpon>ResearchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resources.cs" />
     <Compile Include="REST.cs" />
     <EmbeddedResource Include="CourseForm.resx">
       <DependentUpon>CourseForm.cs</DependentUpon>
