@@ -24,6 +24,9 @@ namespace DiazP2
         People people;
         Dictionary<string, Faculty> facultyDictionary = new Dictionary<string, Faculty>();
         Dictionary<string, Staff> staffDictionary = new Dictionary<string, Staff>();
+        Research research;
+        Dictionary<string, ByInterestArea> interestAreaDictionary = new Dictionary<string, ByInterestArea>();
+        Dictionary<string, ByFaculty> facultyResearchDictionary = new Dictionary<string, ByFaculty>();
 
         public Main()
         {
@@ -49,6 +52,7 @@ namespace DiazP2
             BuildMinors();
             BuildEmployment();
             BuildPeople();
+            BuildResearch();
         }
 
         private void BuildAbout()
@@ -76,14 +80,14 @@ namespace DiazP2
             int y = 50;
 
             MaterialLabel undergraduteLabel = new MaterialLabel();
-            undergraduteLabel.Size = new Size(undergraduteLabel.Size.Width + 20, undergraduteLabel.Size.Height);          
+            undergraduteLabel.Size = new Size(undergraduteLabel.Size.Width + 20, undergraduteLabel.Size.Height);
             undergraduteLabel.Text = "Undergraduate";
 
             undergraduteLabel.Location = new Point(20, 20);
             degreesRadioButtons.Controls.Add(undergraduteLabel);
 
 
-            foreach(Undergraduate degree in degrees.undergraduate)
+            foreach (Undergraduate degree in degrees.undergraduate)
             {
                 MaterialRadioButton radio = new MaterialRadioButton();
                 radio.Text = degree.degreeName;
@@ -122,7 +126,7 @@ namespace DiazP2
         {
             MaterialRadioButton button = (MaterialRadioButton)sender;
             string degreeName = button.Text;
-            Undergraduate undergraduateDegree = null; 
+            Undergraduate undergraduateDegree = null;
             Graduate graduateDegree = null;
 
             foreach (Undergraduate degree in degrees.undergraduate)
@@ -133,8 +137,8 @@ namespace DiazP2
                     break;
                 }
             }
-            
-            foreach(Graduate degree in degrees.graduate)
+
+            foreach (Graduate degree in degrees.graduate)
             {
                 if (degree.degreeName == degreeName)
                 {
@@ -149,12 +153,13 @@ namespace DiazP2
             degreeDescription.Visible = true;
 
             string list = "";
-            if (undergraduateDegree != null) {
+            if (undergraduateDegree != null)
+            {
                 degreeTitle.Text = undergraduateDegree.title;
                 degreeDescription.Text = undergraduateDegree.description;
 
                 list = "Concentrations: \n";
-                foreach(string concentration in undergraduateDegree.concentrations)
+                foreach (string concentration in undergraduateDegree.concentrations)
                 {
                     list += "    - " + concentration + "\n";
                 }
@@ -244,7 +249,7 @@ namespace DiazP2
 
             courses.Controls.Clear();
 
-            foreach(string course in ugMinor.courses)
+            foreach (string course in ugMinor.courses)
             {
                 LinkLabel courseLabel = new LinkLabel();
                 courseLabel.Text = course;
@@ -258,7 +263,7 @@ namespace DiazP2
 
         }
 
-        private void courseClicked (object sender, LinkLabelLinkClickedEventArgs e)
+        private void courseClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LinkLabel link = (LinkLabel)sender;
             link.LinkVisited = true;
@@ -355,7 +360,7 @@ namespace DiazP2
             peopleTitle.Text = people.title;
             peopleTitle.Font = new Font(peopleTitle.Font.FontFamily, 10, FontStyle.Bold);
 
-            foreach(Faculty faculty in people.faculty)
+            foreach (Faculty faculty in people.faculty)
             {
                 LinkLabel person = new LinkLabel();
                 person.Text = faculty.name;
@@ -365,7 +370,7 @@ namespace DiazP2
                 person.LinkClicked += new LinkLabelLinkClickedEventHandler(personLinkClicked);
             }
 
-            foreach(Staff staff in people.staff)
+            foreach (Staff staff in people.staff)
             {
                 LinkLabel person = new LinkLabel();
                 person.Text = staff.name;
@@ -405,7 +410,8 @@ namespace DiazP2
                 websiteL.Text = "Website: " + faculty.website;
                 twitterL.Text = "Twitter: " + faculty.twitter;
                 facebookL.Text = "Facebook: " + faculty.facebook;
-            } else
+            }
+            else
             {
                 Staff staff = staffDictionary[name];
                 url = staff.imagePath;
@@ -413,6 +419,53 @@ namespace DiazP2
 
             personPicture.Load(url);
 
+        }
+
+        private void BuildResearch()
+        {
+            string jsonResearch = rest.getRESTDataJSON("/research/");
+
+            research = JToken.Parse(jsonResearch).ToObject<Research>();
+
+            foreach (ByInterestArea interestArea in research.byInterestArea)
+            {
+                LinkLabel area = new LinkLabel();
+                area.Text = interestArea.areaName;
+                area.Size = new Size(area.Size.Width + 20, area.Size.Height);
+                byInterestPanel.Controls.Add(area);
+                interestAreaDictionary[interestArea.areaName] = interestArea;
+                area.LinkClicked += new LinkLabelLinkClickedEventHandler(areaLinkClicked);
+            }
+
+            foreach (ByFaculty faculty in research.byFaculty)
+            {
+                LinkLabel area = new LinkLabel();
+                area.Text = faculty.facultyName;
+                area.Size = new Size(area.Size.Width + 20, area.Size.Height);
+                byFacultyPanel.Controls.Add(area);
+                facultyResearchDictionary[faculty.facultyName] = faculty;
+                area.LinkClicked += new LinkLabelLinkClickedEventHandler(facultyResearchLinkClicked);
+            }
+        }
+
+        private void areaLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel link = (LinkLabel)sender;
+            link.LinkVisited = true;
+            string area = link.Text;
+
+            ResearchForm form = new ResearchForm(area + " Research", interestAreaDictionary[area].citations);
+            form.Show();
+        }
+
+        private void facultyResearchLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel link = (LinkLabel)sender;
+            link.LinkVisited = true;
+            string faculty = link.Text;
+
+            ResearchForm form = new ResearchForm(faculty + "'s research", facultyResearchDictionary[faculty].citations);
+            form.Show();
         }
     }
 }

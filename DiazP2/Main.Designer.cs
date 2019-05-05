@@ -62,7 +62,7 @@ namespace DiazP2
             this.employmentSubTitle1 = new System.Windows.Forms.Label();
             this.employmentTitle = new System.Windows.Forms.Label();
             this.PeopleTab = new System.Windows.Forms.TabPage();
-            this.NewsTab = new System.Windows.Forms.TabPage();
+            this.researchTab = new System.Windows.Forms.TabPage();
             this.ContactTab = new System.Windows.Forms.TabPage();
             this.minorsTa = new System.Windows.Forms.TabPage();
             this.peoplePanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -78,6 +78,11 @@ namespace DiazP2
             this.websiteL = new System.Windows.Forms.Label();
             this.twitterL = new System.Windows.Forms.Label();
             this.facebookL = new System.Windows.Forms.Label();
+            this.researchTitle = new System.Windows.Forms.Label();
+            this.byInterestPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.byFacultyPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.byAreaLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Tabs.SuspendLayout();
             this.AboutTab.SuspendLayout();
             this.DegreesTab.SuspendLayout();
@@ -88,6 +93,7 @@ namespace DiazP2
             this.statisticsBox.SuspendLayout();
             this.employmentBox.SuspendLayout();
             this.PeopleTab.SuspendLayout();
+            this.researchTab.SuspendLayout();
             this.personData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personPicture)).BeginInit();
             this.SuspendLayout();
@@ -112,7 +118,7 @@ namespace DiazP2
             this.Tabs.Controls.Add(this.minorsTab);
             this.Tabs.Controls.Add(this.employmentTab);
             this.Tabs.Controls.Add(this.PeopleTab);
-            this.Tabs.Controls.Add(this.NewsTab);
+            this.Tabs.Controls.Add(this.researchTab);
             this.Tabs.Controls.Add(this.ContactTab);
             this.Tabs.Controls.Add(this.minorsTa);
             this.Tabs.Depth = 0;
@@ -441,15 +447,20 @@ namespace DiazP2
             this.PeopleTab.Text = "People";
             this.PeopleTab.UseVisualStyleBackColor = true;
             // 
-            // NewsTab
+            // researchTab
             // 
-            this.NewsTab.Location = new System.Drawing.Point(8, 39);
-            this.NewsTab.Name = "NewsTab";
-            this.NewsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.NewsTab.Size = new System.Drawing.Size(1628, 656);
-            this.NewsTab.TabIndex = 5;
-            this.NewsTab.Text = "News";
-            this.NewsTab.UseVisualStyleBackColor = true;
+            this.researchTab.Controls.Add(this.label1);
+            this.researchTab.Controls.Add(this.byAreaLabel);
+            this.researchTab.Controls.Add(this.byFacultyPanel);
+            this.researchTab.Controls.Add(this.byInterestPanel);
+            this.researchTab.Controls.Add(this.researchTitle);
+            this.researchTab.Location = new System.Drawing.Point(8, 39);
+            this.researchTab.Name = "researchTab";
+            this.researchTab.Padding = new System.Windows.Forms.Padding(3);
+            this.researchTab.Size = new System.Drawing.Size(1628, 656);
+            this.researchTab.TabIndex = 5;
+            this.researchTab.Text = "Research";
+            this.researchTab.UseVisualStyleBackColor = true;
             // 
             // ContactTab
             // 
@@ -578,6 +589,51 @@ namespace DiazP2
             this.facebookL.Size = new System.Drawing.Size(238, 23);
             this.facebookL.TabIndex = 9;
             // 
+            // researchTitle
+            // 
+            this.researchTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.researchTitle.Location = new System.Drawing.Point(27, 12);
+            this.researchTitle.Name = "researchTitle";
+            this.researchTitle.Size = new System.Drawing.Size(464, 48);
+            this.researchTitle.TabIndex = 0;
+            this.researchTitle.Text = "Research";
+            // 
+            // byInterestPanel
+            // 
+            this.byInterestPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.byInterestPanel.Location = new System.Drawing.Point(27, 135);
+            this.byInterestPanel.Name = "byInterestPanel";
+            this.byInterestPanel.Size = new System.Drawing.Size(426, 515);
+            this.byInterestPanel.TabIndex = 1;
+            // 
+            // byFacultyPanel
+            // 
+            this.byFacultyPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.byFacultyPanel.Location = new System.Drawing.Point(481, 135);
+            this.byFacultyPanel.Name = "byFacultyPanel";
+            this.byFacultyPanel.Size = new System.Drawing.Size(1119, 515);
+            this.byFacultyPanel.TabIndex = 2;
+            // 
+            // byAreaLabel
+            // 
+            this.byAreaLabel.AutoSize = true;
+            this.byAreaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.byAreaLabel.Location = new System.Drawing.Point(27, 75);
+            this.byAreaLabel.Name = "byAreaLabel";
+            this.byAreaLabel.Size = new System.Drawing.Size(209, 31);
+            this.byAreaLabel.TabIndex = 4;
+            this.byAreaLabel.Text = "By Interest Area";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(475, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 31);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "By Faculty";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -603,6 +659,8 @@ namespace DiazP2
             this.employmentBox.ResumeLayout(false);
             this.PeopleTab.ResumeLayout(false);
             this.PeopleTab.PerformLayout();
+            this.researchTab.ResumeLayout(false);
+            this.researchTab.PerformLayout();
             this.personData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.personPicture)).EndInit();
             this.ResumeLayout(false);
@@ -630,7 +688,7 @@ namespace DiazP2
         private MaterialLabel minorName;
         private System.Windows.Forms.TabPage employmentTab;
         private System.Windows.Forms.TabPage PeopleTab;
-        private System.Windows.Forms.TabPage NewsTab;
+        private System.Windows.Forms.TabPage researchTab;
         private System.Windows.Forms.TabPage ContactTab;
         private System.Windows.Forms.TabPage minorsTa;
         private System.Windows.Forms.Panel courses;
@@ -657,6 +715,11 @@ namespace DiazP2
         private System.Windows.Forms.Label officeL;
         private System.Windows.Forms.Label interestAreas;
         private System.Windows.Forms.Label personTitle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label byAreaLabel;
+        private System.Windows.Forms.FlowLayoutPanel byFacultyPanel;
+        private System.Windows.Forms.FlowLayoutPanel byInterestPanel;
+        private System.Windows.Forms.Label researchTitle;
     }
 }
 

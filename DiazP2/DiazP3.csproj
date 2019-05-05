@@ -81,6 +81,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Research.cs" />
+    <Compile Include="ResearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResearchForm.Designer.cs">
+      <DependentUpon>ResearchForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="REST.cs" />
     <EmbeddedResource Include="CourseForm.resx">
       <DependentUpon>CourseForm.cs</DependentUpon>
@@ -100,6 +106,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ResearchForm.resx">
+      <DependentUpon>ResearchForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
