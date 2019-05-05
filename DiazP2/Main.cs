@@ -20,6 +20,7 @@ namespace DiazP2
         About about;
         Degrees degrees;
         Minors minors;
+        Employment employment;
         public Main()
         {
             this.rest = new REST("http://ist.rit.edu/api");
@@ -42,6 +43,7 @@ namespace DiazP2
             BuildAbout();
             BuildDegrees();
             BuildMinors();
+            BuildEmployment();
         }
 
         private void BuildAbout()
@@ -263,6 +265,83 @@ namespace DiazP2
             CourseForm courseForm = new CourseForm(course.title + " (" + course.courseID + ")", course.description);
 
             courseForm.Show();
+
+        }
+
+        private void BuildEmployment()
+        {
+            string jsonEmployment = rest.getRESTDataJSON("/employment/");
+
+            employment = JToken.Parse(jsonEmployment).ToObject<Employment>();
+
+            employmentTitle.Visible = true;
+            employmentTitle.Font = new Font(employmentTitle.Font.FontFamily, 10, FontStyle.Bold);
+            employmentTitle.Text = employment.introduction.title;
+
+            employmentSubTitle1.Text = employment.introduction.content[0].title;
+            employmentSubTitle1.Font = new Font(employmentSubTitle1.Font.FontFamily, 10, FontStyle.Underline);
+            employmentDescription1.Text = employment.introduction.content[0].description;
+            employmentDescription1.Font = new Font(employmentSubTitle1.Font.FontFamily, 10, FontStyle.Regular);
+
+            employmentSubtitle2.Text = employment.introduction.content[1].title;
+            employmentSubtitle2.Font = new Font(employmentSubTitle1.Font.FontFamily, 10, FontStyle.Underline);
+            employmentDescription2.Text = employment.introduction.content[1].description;
+            employmentDescription2.Font = new Font(employmentSubTitle1.Font.FontFamily, 10, FontStyle.Regular);
+
+            DegreeStatistics statistics = employment.degreeStatistics;
+            statisticsTitle.Text = statistics.title;
+            statisticsTitle.Font = new Font(employmentSubTitle1.Font.FontFamily, 10, FontStyle.Underline);
+
+            int x = statisticsTitle.Location.X;
+            int y = statisticsTitle.Location.Y + 25;
+
+            foreach (Statistic statistic in statistics.statistics)
+            {
+                Label statisticValue = new Label();
+                statisticValue.Text = statistic.value;
+                statisticValue.Font = new Font(employmentTitle.Font.FontFamily, 10, FontStyle.Bold);
+                statisticValue.Location = new Point(x, y);
+                y += 20;
+
+                Label statisticDescription = new Label();
+                statisticDescription.Text = statistic.description;
+                statisticDescription.AutoSize = false;
+                statisticDescription.Size = new Size(statisticsTitle.Size.Width, statisticsTitle.Size.Height + 25);
+                statisticDescription.Font = new Font(employmentTitle.Font.FontFamily, 10, FontStyle.Regular);
+                statisticDescription.Location = new Point(x, y);
+                y += 52;
+
+                statisticsBox.Controls.Add(statisticValue);
+                statisticsBox.Controls.Add(statisticDescription);
+            }
+
+            coopLink.LinkClicked += new LinkLabelLinkClickedEventHandler(coopLinkClicked);
+            employmentLink.LinkClicked += new LinkLabelLinkClickedEventHandler(employmentLinkClicked);
+        }
+
+        private void TabsSelector_Click(object sender, EventArgs e)
+        {   
+        }
+
+        private void coopLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel link = (LinkLabel)sender;
+            link.LinkVisited = true;
+
+            EmploymentWindow coopWindow = new EmploymentWindow("coop", employment);
+
+            coopWindow.Show();
+
+        }
+
+        private void employmentLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel link = (LinkLabel)sender;
+            link.LinkVisited = true;
+
+            EmploymentWindow coopWindow = new EmploymentWindow("full-time", employment);
+
+            coopWindow.Show();
 
         }
     }
