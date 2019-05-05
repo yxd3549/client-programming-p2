@@ -52,19 +52,32 @@ namespace DiazP2
             this.minorName = new MaterialSkin.Controls.MaterialLabel();
             this.employmentTab = new System.Windows.Forms.TabPage();
             this.statisticsBox = new System.Windows.Forms.GroupBox();
+            this.statisticsTitle = new System.Windows.Forms.Label();
             this.employmentBox = new System.Windows.Forms.GroupBox();
-            this.ResourcesTab = new System.Windows.Forms.TabPage();
+            this.coopLink = new System.Windows.Forms.LinkLabel();
+            this.employmentLink = new System.Windows.Forms.LinkLabel();
+            this.employmentDescription2 = new System.Windows.Forms.Label();
+            this.employmentSubtitle2 = new System.Windows.Forms.Label();
+            this.employmentDescription1 = new System.Windows.Forms.Label();
+            this.employmentSubTitle1 = new System.Windows.Forms.Label();
+            this.employmentTitle = new System.Windows.Forms.Label();
+            this.PeopleTab = new System.Windows.Forms.TabPage();
             this.NewsTab = new System.Windows.Forms.TabPage();
             this.ContactTab = new System.Windows.Forms.TabPage();
             this.minorsTa = new System.Windows.Forms.TabPage();
-            this.employmentTitle = new System.Windows.Forms.Label();
-            this.employmentSubTitle1 = new System.Windows.Forms.Label();
-            this.employmentDescription1 = new System.Windows.Forms.Label();
-            this.employmentSubtitle2 = new System.Windows.Forms.Label();
-            this.employmentDescription2 = new System.Windows.Forms.Label();
-            this.statisticsTitle = new System.Windows.Forms.Label();
-            this.employmentLink = new System.Windows.Forms.LinkLabel();
-            this.coopLink = new System.Windows.Forms.LinkLabel();
+            this.peoplePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.personData = new System.Windows.Forms.GroupBox();
+            this.personPicture = new System.Windows.Forms.PictureBox();
+            this.peopleTitle = new System.Windows.Forms.Label();
+            this.personName = new System.Windows.Forms.Label();
+            this.personTitle = new System.Windows.Forms.Label();
+            this.interestAreas = new System.Windows.Forms.Label();
+            this.officeL = new System.Windows.Forms.Label();
+            this.emailL = new System.Windows.Forms.Label();
+            this.phoneL = new System.Windows.Forms.Label();
+            this.websiteL = new System.Windows.Forms.Label();
+            this.twitterL = new System.Windows.Forms.Label();
+            this.facebookL = new System.Windows.Forms.Label();
             this.Tabs.SuspendLayout();
             this.AboutTab.SuspendLayout();
             this.DegreesTab.SuspendLayout();
@@ -74,6 +87,9 @@ namespace DiazP2
             this.employmentTab.SuspendLayout();
             this.statisticsBox.SuspendLayout();
             this.employmentBox.SuspendLayout();
+            this.PeopleTab.SuspendLayout();
+            this.personData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // TabsSelector
@@ -88,7 +104,6 @@ namespace DiazP2
             this.TabsSelector.Size = new System.Drawing.Size(1675, 57);
             this.TabsSelector.TabIndex = 1;
             this.TabsSelector.Text = "materialTabSelector1";
-            this.TabsSelector.Click += new System.EventHandler(this.TabsSelector_Click);
             // 
             // Tabs
             // 
@@ -96,7 +111,7 @@ namespace DiazP2
             this.Tabs.Controls.Add(this.DegreesTab);
             this.Tabs.Controls.Add(this.minorsTab);
             this.Tabs.Controls.Add(this.employmentTab);
-            this.Tabs.Controls.Add(this.ResourcesTab);
+            this.Tabs.Controls.Add(this.PeopleTab);
             this.Tabs.Controls.Add(this.NewsTab);
             this.Tabs.Controls.Add(this.ContactTab);
             this.Tabs.Controls.Add(this.minorsTa);
@@ -330,6 +345,14 @@ namespace DiazP2
             this.statisticsBox.TabIndex = 1;
             this.statisticsBox.TabStop = false;
             // 
+            // statisticsTitle
+            // 
+            this.statisticsTitle.Location = new System.Drawing.Point(16, 25);
+            this.statisticsTitle.Name = "statisticsTitle";
+            this.statisticsTitle.Size = new System.Drawing.Size(437, 53);
+            this.statisticsTitle.TabIndex = 0;
+            this.statisticsTitle.Text = "label1";
+            // 
             // employmentBox
             // 
             this.employmentBox.Controls.Add(this.coopLink);
@@ -345,15 +368,78 @@ namespace DiazP2
             this.employmentBox.TabIndex = 0;
             this.employmentBox.TabStop = false;
             // 
-            // ResourcesTab
+            // coopLink
             // 
-            this.ResourcesTab.Location = new System.Drawing.Point(8, 39);
-            this.ResourcesTab.Name = "ResourcesTab";
-            this.ResourcesTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ResourcesTab.Size = new System.Drawing.Size(1628, 656);
-            this.ResourcesTab.TabIndex = 4;
-            this.ResourcesTab.Text = "Resources";
-            this.ResourcesTab.UseVisualStyleBackColor = true;
+            this.coopLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coopLink.Location = new System.Drawing.Point(877, 317);
+            this.coopLink.Name = "coopLink";
+            this.coopLink.Size = new System.Drawing.Size(174, 46);
+            this.coopLink.TabIndex = 11;
+            this.coopLink.TabStop = true;
+            this.coopLink.Text = "Co-op Table";
+            // 
+            // employmentLink
+            // 
+            this.employmentLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employmentLink.Location = new System.Drawing.Point(831, 77);
+            this.employmentLink.Name = "employmentLink";
+            this.employmentLink.Size = new System.Drawing.Size(220, 46);
+            this.employmentLink.TabIndex = 10;
+            this.employmentLink.TabStop = true;
+            this.employmentLink.Text = "Employer Table";
+            // 
+            // employmentDescription2
+            // 
+            this.employmentDescription2.Location = new System.Drawing.Point(22, 373);
+            this.employmentDescription2.Name = "employmentDescription2";
+            this.employmentDescription2.Size = new System.Drawing.Size(1048, 261);
+            this.employmentDescription2.TabIndex = 9;
+            this.employmentDescription2.Text = "label1";
+            // 
+            // employmentSubtitle2
+            // 
+            this.employmentSubtitle2.Location = new System.Drawing.Point(22, 319);
+            this.employmentSubtitle2.Name = "employmentSubtitle2";
+            this.employmentSubtitle2.Size = new System.Drawing.Size(563, 44);
+            this.employmentSubtitle2.TabIndex = 8;
+            this.employmentSubtitle2.Text = "label1";
+            // 
+            // employmentDescription1
+            // 
+            this.employmentDescription1.Location = new System.Drawing.Point(22, 134);
+            this.employmentDescription1.Name = "employmentDescription1";
+            this.employmentDescription1.Size = new System.Drawing.Size(1048, 164);
+            this.employmentDescription1.TabIndex = 7;
+            this.employmentDescription1.Text = "label1";
+            // 
+            // employmentSubTitle1
+            // 
+            this.employmentSubTitle1.Location = new System.Drawing.Point(22, 77);
+            this.employmentSubTitle1.Name = "employmentSubTitle1";
+            this.employmentSubTitle1.Size = new System.Drawing.Size(549, 46);
+            this.employmentSubTitle1.TabIndex = 6;
+            this.employmentSubTitle1.Text = "label1";
+            // 
+            // employmentTitle
+            // 
+            this.employmentTitle.Location = new System.Drawing.Point(22, 32);
+            this.employmentTitle.Name = "employmentTitle";
+            this.employmentTitle.Size = new System.Drawing.Size(992, 53);
+            this.employmentTitle.TabIndex = 5;
+            this.employmentTitle.Text = "label1";
+            // 
+            // PeopleTab
+            // 
+            this.PeopleTab.Controls.Add(this.peopleTitle);
+            this.PeopleTab.Controls.Add(this.personData);
+            this.PeopleTab.Controls.Add(this.peoplePanel);
+            this.PeopleTab.Location = new System.Drawing.Point(8, 39);
+            this.PeopleTab.Name = "PeopleTab";
+            this.PeopleTab.Padding = new System.Windows.Forms.Padding(3);
+            this.PeopleTab.Size = new System.Drawing.Size(1628, 656);
+            this.PeopleTab.TabIndex = 4;
+            this.PeopleTab.Text = "People";
+            this.PeopleTab.UseVisualStyleBackColor = true;
             // 
             // NewsTab
             // 
@@ -385,73 +471,112 @@ namespace DiazP2
             this.minorsTa.Text = "Minors";
             this.minorsTa.UseVisualStyleBackColor = true;
             // 
-            // employmentTitle
+            // peoplePanel
             // 
-            this.employmentTitle.Location = new System.Drawing.Point(22, 32);
-            this.employmentTitle.Name = "employmentTitle";
-            this.employmentTitle.Size = new System.Drawing.Size(992, 53);
-            this.employmentTitle.TabIndex = 5;
-            this.employmentTitle.Text = "label1";
+            this.peoplePanel.AutoScroll = true;
+            this.peoplePanel.Location = new System.Drawing.Point(26, 82);
+            this.peoplePanel.Name = "peoplePanel";
+            this.peoplePanel.Size = new System.Drawing.Size(939, 568);
+            this.peoplePanel.TabIndex = 0;
             // 
-            // employmentSubTitle1
+            // personData
             // 
-            this.employmentSubTitle1.Location = new System.Drawing.Point(22, 77);
-            this.employmentSubTitle1.Name = "employmentSubTitle1";
-            this.employmentSubTitle1.Size = new System.Drawing.Size(549, 46);
-            this.employmentSubTitle1.TabIndex = 6;
-            this.employmentSubTitle1.Text = "label1";
+            this.personData.Controls.Add(this.facebookL);
+            this.personData.Controls.Add(this.twitterL);
+            this.personData.Controls.Add(this.websiteL);
+            this.personData.Controls.Add(this.phoneL);
+            this.personData.Controls.Add(this.emailL);
+            this.personData.Controls.Add(this.officeL);
+            this.personData.Controls.Add(this.interestAreas);
+            this.personData.Controls.Add(this.personTitle);
+            this.personData.Controls.Add(this.personName);
+            this.personData.Controls.Add(this.personPicture);
+            this.personData.Location = new System.Drawing.Point(987, 25);
+            this.personData.Name = "personData";
+            this.personData.Size = new System.Drawing.Size(614, 625);
+            this.personData.TabIndex = 1;
+            this.personData.TabStop = false;
             // 
-            // employmentDescription1
+            // personPicture
             // 
-            this.employmentDescription1.Location = new System.Drawing.Point(22, 134);
-            this.employmentDescription1.Name = "employmentDescription1";
-            this.employmentDescription1.Size = new System.Drawing.Size(1048, 164);
-            this.employmentDescription1.TabIndex = 7;
-            this.employmentDescription1.Text = "label1";
+            this.personPicture.Location = new System.Drawing.Point(39, 98);
+            this.personPicture.Name = "personPicture";
+            this.personPicture.Size = new System.Drawing.Size(270, 270);
+            this.personPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.personPicture.TabIndex = 0;
+            this.personPicture.TabStop = false;
             // 
-            // employmentSubtitle2
+            // peopleTitle
             // 
-            this.employmentSubtitle2.Location = new System.Drawing.Point(22, 319);
-            this.employmentSubtitle2.Name = "employmentSubtitle2";
-            this.employmentSubtitle2.Size = new System.Drawing.Size(563, 44);
-            this.employmentSubtitle2.TabIndex = 8;
-            this.employmentSubtitle2.Text = "label1";
+            this.peopleTitle.AutoSize = true;
+            this.peopleTitle.Location = new System.Drawing.Point(21, 25);
+            this.peopleTitle.Name = "peopleTitle";
+            this.peopleTitle.Size = new System.Drawing.Size(70, 25);
+            this.peopleTitle.TabIndex = 0;
+            this.peopleTitle.Text = "label1";
             // 
-            // employmentDescription2
+            // personName
             // 
-            this.employmentDescription2.Location = new System.Drawing.Point(22, 373);
-            this.employmentDescription2.Name = "employmentDescription2";
-            this.employmentDescription2.Size = new System.Drawing.Size(1048, 261);
-            this.employmentDescription2.TabIndex = 9;
-            this.employmentDescription2.Text = "label1";
+            this.personName.Location = new System.Drawing.Point(34, 44);
+            this.personName.Name = "personName";
+            this.personName.Size = new System.Drawing.Size(535, 32);
+            this.personName.TabIndex = 1;
             // 
-            // statisticsTitle
+            // personTitle
             // 
-            this.statisticsTitle.Location = new System.Drawing.Point(16, 25);
-            this.statisticsTitle.Name = "statisticsTitle";
-            this.statisticsTitle.Size = new System.Drawing.Size(437, 53);
-            this.statisticsTitle.TabIndex = 0;
-            this.statisticsTitle.Text = "label1";
+            this.personTitle.Location = new System.Drawing.Point(336, 98);
+            this.personTitle.Name = "personTitle";
+            this.personTitle.Size = new System.Drawing.Size(238, 23);
+            this.personTitle.TabIndex = 2;
             // 
-            // employmentLink
+            // interestAreas
             // 
-            this.employmentLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employmentLink.Location = new System.Drawing.Point(831, 77);
-            this.employmentLink.Name = "employmentLink";
-            this.employmentLink.Size = new System.Drawing.Size(220, 46);
-            this.employmentLink.TabIndex = 10;
-            this.employmentLink.TabStop = true;
-            this.employmentLink.Text = "Employer Table";
+            this.interestAreas.Location = new System.Drawing.Point(336, 151);
+            this.interestAreas.Name = "interestAreas";
+            this.interestAreas.Size = new System.Drawing.Size(238, 73);
+            this.interestAreas.TabIndex = 3;
             // 
-            // coopLink
+            // officeL
             // 
-            this.coopLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.coopLink.Location = new System.Drawing.Point(877, 317);
-            this.coopLink.Name = "coopLink";
-            this.coopLink.Size = new System.Drawing.Size(174, 46);
-            this.coopLink.TabIndex = 11;
-            this.coopLink.TabStop = true;
-            this.coopLink.Text = "Co-op Table";
+            this.officeL.Location = new System.Drawing.Point(336, 236);
+            this.officeL.Name = "officeL";
+            this.officeL.Size = new System.Drawing.Size(238, 23);
+            this.officeL.TabIndex = 4;
+            // 
+            // emailL
+            // 
+            this.emailL.Location = new System.Drawing.Point(336, 286);
+            this.emailL.Name = "emailL";
+            this.emailL.Size = new System.Drawing.Size(238, 23);
+            this.emailL.TabIndex = 5;
+            // 
+            // phoneL
+            // 
+            this.phoneL.Location = new System.Drawing.Point(336, 331);
+            this.phoneL.Name = "phoneL";
+            this.phoneL.Size = new System.Drawing.Size(238, 23);
+            this.phoneL.TabIndex = 6;
+            // 
+            // websiteL
+            // 
+            this.websiteL.Location = new System.Drawing.Point(39, 402);
+            this.websiteL.Name = "websiteL";
+            this.websiteL.Size = new System.Drawing.Size(238, 23);
+            this.websiteL.TabIndex = 7;
+            // 
+            // twitterL
+            // 
+            this.twitterL.Location = new System.Drawing.Point(39, 445);
+            this.twitterL.Name = "twitterL";
+            this.twitterL.Size = new System.Drawing.Size(238, 23);
+            this.twitterL.TabIndex = 8;
+            // 
+            // facebookL
+            // 
+            this.facebookL.Location = new System.Drawing.Point(39, 486);
+            this.facebookL.Name = "facebookL";
+            this.facebookL.Size = new System.Drawing.Size(238, 23);
+            this.facebookL.TabIndex = 9;
             // 
             // Main
             // 
@@ -476,6 +601,10 @@ namespace DiazP2
             this.employmentTab.ResumeLayout(false);
             this.statisticsBox.ResumeLayout(false);
             this.employmentBox.ResumeLayout(false);
+            this.PeopleTab.ResumeLayout(false);
+            this.PeopleTab.PerformLayout();
+            this.personData.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.personPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -500,7 +629,7 @@ namespace DiazP2
         private MaterialLabel minorDescription;
         private MaterialLabel minorName;
         private System.Windows.Forms.TabPage employmentTab;
-        private System.Windows.Forms.TabPage ResourcesTab;
+        private System.Windows.Forms.TabPage PeopleTab;
         private System.Windows.Forms.TabPage NewsTab;
         private System.Windows.Forms.TabPage ContactTab;
         private System.Windows.Forms.TabPage minorsTa;
@@ -515,6 +644,19 @@ namespace DiazP2
         private System.Windows.Forms.Label statisticsTitle;
         private System.Windows.Forms.LinkLabel employmentLink;
         private System.Windows.Forms.LinkLabel coopLink;
+        private System.Windows.Forms.GroupBox personData;
+        private System.Windows.Forms.PictureBox personPicture;
+        private System.Windows.Forms.FlowLayoutPanel peoplePanel;
+        private System.Windows.Forms.Label peopleTitle;
+        private System.Windows.Forms.Label personName;
+        private System.Windows.Forms.Label facebookL;
+        private System.Windows.Forms.Label twitterL;
+        private System.Windows.Forms.Label websiteL;
+        private System.Windows.Forms.Label phoneL;
+        private System.Windows.Forms.Label emailL;
+        private System.Windows.Forms.Label officeL;
+        private System.Windows.Forms.Label interestAreas;
+        private System.Windows.Forms.Label personTitle;
     }
 }
 

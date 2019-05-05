@@ -21,6 +21,10 @@ namespace DiazP2
         Degrees degrees;
         Minors minors;
         Employment employment;
+        People people;
+        Dictionary<string, Faculty> facultyDictionary = new Dictionary<string, Faculty>();
+        Dictionary<string, Staff> staffDictionary = new Dictionary<string, Staff>();
+
         public Main()
         {
             this.rest = new REST("http://ist.rit.edu/api");
@@ -44,6 +48,7 @@ namespace DiazP2
             BuildDegrees();
             BuildMinors();
             BuildEmployment();
+            BuildPeople();
         }
 
         private void BuildAbout()
@@ -319,10 +324,6 @@ namespace DiazP2
             employmentLink.LinkClicked += new LinkLabelLinkClickedEventHandler(employmentLinkClicked);
         }
 
-        private void TabsSelector_Click(object sender, EventArgs e)
-        {   
-        }
-
         private void coopLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LinkLabel link = (LinkLabel)sender;
@@ -342,6 +343,75 @@ namespace DiazP2
             EmploymentWindow coopWindow = new EmploymentWindow("full-time", employment);
 
             coopWindow.Show();
+
+        }
+
+        private void BuildPeople()
+        {
+            string jsonPeople = rest.getRESTDataJSON("/people/");
+
+            people = JToken.Parse(jsonPeople).ToObject<People>();
+
+            peopleTitle.Text = people.title;
+            peopleTitle.Font = new Font(peopleTitle.Font.FontFamily, 10, FontStyle.Bold);
+
+            foreach(Faculty faculty in people.faculty)
+            {
+                LinkLabel person = new LinkLabel();
+                person.Text = faculty.name;
+                peoplePanel.Controls.Add(person);
+
+                facultyDictionary.Add(faculty.name, faculty);
+                person.LinkClicked += new LinkLabelLinkClickedEventHandler(personLinkClicked);
+            }
+
+            foreach(Staff staff in people.staff)
+            {
+                LinkLabel person = new LinkLabel();
+                person.Text = staff.name;
+                peoplePanel.Controls.Add(person);
+
+                staffDictionary.Add(staff.name, staff);
+                person.LinkClicked += new LinkLabelLinkClickedEventHandler(personLinkClicked);
+            }
+        }
+
+        private void personLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel link = (LinkLabel)sender;
+            link.LinkVisited = true;
+            string name = link.Text;
+
+            string url = "";
+            string interest = "";
+            string office = "";
+            string email = "";
+            string phone = "";
+            string website = "";
+            string twitter = "";
+            string facebook = "";
+
+            if (facultyDictionary.ContainsKey(name))
+            {
+                Faculty faculty = facultyDictionary[name];
+                url = faculty.imagePath;
+                personName.Text = faculty.name + " (" + faculty.username + ")";
+                personName.Font = new Font(personName.Font.FontFamily, 9, FontStyle.Bold);
+                personTitle.Text = faculty.title;
+                interestAreas.Text = "Interest Areas:\n" + faculty.interestArea;
+                officeL.Text = "Office: " + faculty.office;
+                emailL.Text = "Email: " + faculty.email;
+                phoneL.Text = "Phone: " + faculty.phone;
+                websiteL.Text = "Website: " + faculty.website;
+                twitterL.Text = "Twitter: " + faculty.twitter;
+                facebookL.Text = "Facebook: " + faculty.facebook;
+            } else
+            {
+                Staff staff = staffDictionary[name];
+                url = staff.imagePath;
+            }
+
+            personPicture.Load(url);
 
         }
     }
