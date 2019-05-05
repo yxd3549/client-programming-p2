@@ -499,6 +499,8 @@ namespace DiazP2
                 link.LinkClicked += new LinkLabelLinkClickedEventHandler(formLinkClicked);
                 formsFlowPlane.Controls.Add(link);
             }
+
+            studyAbroadLink.LinkClicked += new LinkLabelLinkClickedEventHandler(studyAbroadClicked);
         }
 
         private void formLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -510,6 +512,12 @@ namespace DiazP2
             Console.WriteLine(formHref);
             System.Diagnostics.Process.Start("http://ist.rit.edu/" + formHref);
 
+        }
+
+        private void studyAbroadClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            StudyAbroadForm form = new StudyAbroadForm(resources);
+            form.Show();
         }
     }
 }
