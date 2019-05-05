@@ -59,6 +59,12 @@
     <Compile Include="AmbassadorsForm.Designer.cs">
       <DependentUpon>AmbassadorsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoopEnrollmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoopEnrollmentForm.Designer.cs">
+      <DependentUpon>CoopEnrollmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Course.cs" />
     <Compile Include="CourseForm.cs">
       <SubType>Form</SubType>
@@ -115,6 +121,9 @@
     </Compile>
     <EmbeddedResource Include="AmbassadorsForm.resx">
       <DependentUpon>AmbassadorsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoopEnrollmentForm.resx">
+      <DependentUpon>CoopEnrollmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseForm.resx">
       <DependentUpon>CourseForm.cs</DependentUpon>

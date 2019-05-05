@@ -504,7 +504,7 @@ namespace DiazP2
             studentServicesLink.LinkClicked += new LinkLabelLinkClickedEventHandler(studentResourcesClicked);
             labsLink.LinkClicked += new LinkLabelLinkClickedEventHandler(labsClicked);
             ambassadorsLink.LinkClicked += new LinkLabelLinkClickedEventHandler(ambassadorsClicked);
-
+            coopEnrollmentLink.LinkClicked += new LinkLabelLinkClickedEventHandler(coopClicked);
         }
 
         private void formLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -539,6 +539,11 @@ namespace DiazP2
         private void ambassadorsClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AmbassadorsForm form = new AmbassadorsForm(resources);
+            form.Show();
+        }
+        private void coopClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CoopEnrollmentForm form = new CoopEnrollmentForm(resources);
             form.Show();
         }
     }
