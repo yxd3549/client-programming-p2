@@ -502,6 +502,9 @@ namespace DiazP2
 
             studyAbroadLink.LinkClicked += new LinkLabelLinkClickedEventHandler(studyAbroadClicked);
             studentServicesLink.LinkClicked += new LinkLabelLinkClickedEventHandler(studentResourcesClicked);
+            labsLink.LinkClicked += new LinkLabelLinkClickedEventHandler(labsClicked);
+            ambassadorsLink.LinkClicked += new LinkLabelLinkClickedEventHandler(ambassadorsClicked);
+
         }
 
         private void formLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -524,6 +527,18 @@ namespace DiazP2
         private void studentResourcesClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             StudentResources form = new StudentResources(resources);
+            form.Show();
+        }
+
+        private void labsClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LabInformation form = new LabInformation(resources);
+            form.Show();
+        }
+
+        private void ambassadorsClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AmbassadorsForm form = new AmbassadorsForm(resources);
             form.Show();
         }
     }

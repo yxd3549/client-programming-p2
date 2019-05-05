@@ -53,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.cs" />
+    <Compile Include="AmbassadorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AmbassadorsForm.Designer.cs">
+      <DependentUpon>AmbassadorsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Course.cs" />
     <Compile Include="CourseForm.cs">
       <SubType>Form</SubType>
@@ -69,6 +75,12 @@
       <DependentUpon>EmploymentWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Footer.cs" />
+    <Compile Include="LabInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabInformation.Designer.cs">
+      <DependentUpon>LabInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,11 +113,17 @@
     <Compile Include="StudyAbroadForm.Designer.cs">
       <DependentUpon>StudyAbroadForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AmbassadorsForm.resx">
+      <DependentUpon>AmbassadorsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CourseForm.resx">
       <DependentUpon>CourseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmploymentWindow.resx">
       <DependentUpon>EmploymentWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabInformation.resx">
+      <DependentUpon>LabInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
